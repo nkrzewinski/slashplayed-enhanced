@@ -34,7 +34,7 @@ targets:
     info:
       path: Generated/Info.plist
       properties:
-        CFBundleDisplayName: Slashplayed Companion
+        CFBundleDisplayName: Slashplayed Enhanced Companion
         # xcodegen writes 1.0 (1) unless told: the About panel, BindCheck's issue link and the diagnostics
         # all read these, so they follow the build settings (MARKETING_VERSION is the release version).
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -51,7 +51,10 @@ targets:
     settings:
       base:
         PRODUCT_NAME: Slashplayed Companion
-        PRODUCT_BUNDLE_IDENTIFIER: com.strawdynamics.slashplayed.companion
+        # Not upstream's com.strawdynamics.slashplayed.companion: a bundle ID of this fork's own, so its settings
+        # (the team, the bundle ID prefix, each device's install record) are apart from an upstream
+        # companion's on the same Mac, and the two can keep different apps on one device.
+        PRODUCT_BUNDLE_IDENTIFIER: com.strawdynamics.slashplayed.companion.enhanced
         MARKETING_VERSION: "1.4.0"
         CURRENT_PROJECT_VERSION: "1"
         # ../client/icons/AppIcon.icon (sources above).

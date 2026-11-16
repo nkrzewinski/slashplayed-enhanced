@@ -51,5 +51,5 @@ else
   codesign -f -s - "$APP"
 fi
 # Earlier builds told the companion where the repo was; it reads nothing from it now.
-defaults delete com.strawdynamics.slashplayed.companion SPDevRepoRoot 2>/dev/null || true
+defaults delete com.strawdynamics.slashplayed.companion.enhanced SPDevRepoRoot 2>/dev/null || true
 echo "built build/companion/Slashplayed Companion.app"

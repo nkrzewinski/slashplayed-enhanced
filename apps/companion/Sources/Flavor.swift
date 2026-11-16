@@ -142,9 +142,11 @@ enum Paths {
         directory(FileManager.default.homeDirectoryForCurrentUser.appending(path: "Library/Logs/Slashplayed"))
     }
 
-    /// ~/Library/Application Support/Slashplayed: thinned clients and the assembled device apps.
+    /// ~/Library/Application Support/SlashplayedEnhanced: thinned clients and the assembled device apps.
+    /// Not upstream's "Slashplayed" folder, so an upstream companion on the same Mac keeps its own builds
+    /// and its own certificate keychain (a key made by one copy can't be used by another: `.otherCopy`).
     static var support: URL {
-        directory(URL.applicationSupportDirectory.appending(path: "Slashplayed"))
+        directory(URL.applicationSupportDirectory.appending(path: "SlashplayedEnhanced"))
     }
 
     /// BlizzardCDN's downloads: the configs, manifest chunks, and arm64 slices of each game's current build.
