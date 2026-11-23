@@ -21,8 +21,10 @@ import idevice
 enum Pairing {
     /// Where the client finds it, in its data container.
     static let devicePath = "Library/sppairing.plist"
-    /// The name the device lists the pairing under.
-    static let hostName = "Slashplayed"
+    /// The name the device lists the pairing under. Not upstream's "Slashplayed": idevice derives the
+    /// record's identifier from this name, and a device keeps one key per identifier, so a pairing made
+    /// under the same name replaced an upstream app's on the same device (its tunnel was then reset).
+    static let hostName = "Slashplayed+"
 
     /// Makes a record for `udid` (on USB) and copies it into the app's data container on `device`.
     /// Returns its size.

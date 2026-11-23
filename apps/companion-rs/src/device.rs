@@ -25,7 +25,7 @@ use zeroize::Zeroizing;
 use crate::say;
 
 /// The name this computer's pairings go by on the device (Settings > Developer lists the RemotePairing one).
-pub const HOST_NAME: &str = "Slashplayed";
+pub const HOST_NAME: &str = "Slashplayed+";
 /// Where the launcher finds its RemotePairing record (Pairing.devicePath).
 pub const PAIRING_PATH: &str = "Library/sppairing.plist";
 
