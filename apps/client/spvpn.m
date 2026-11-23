@@ -4,9 +4,9 @@
 // rather than failing with "turn it on, then open Slashplayed again": opening an app that's still running
 // only brings it back to the front, so that took a force quit.
 //
-// The screen opens localdevvpn://enable?scheme=slashplayed, once by itself and again from its button.
+// The screen opens localdevvpn://enable?scheme=slashplayedplus, once by itself and again from its button.
 // LocalDevVPN (com.jkcoxson.LocalDevVPN, its LocalDevVPNApp.swift) turns its VPN on and, a second later,
-// opens slashplayed:// (Info.plist's CFBundleURLTypes), which brings Slashplayed back. The URL itself
+// opens slashplayedplus:// (Info.plist's CFBundleURLTypes), which brings Slashplayed back. The URL itself
 // needs no handling here: a connect through the VPN, tried every second off the main thread, is what
 // ends the wait, so turning it on by hand and coming back works too. On iOS the app is suspended while
 // it's in the background, and the tries pick up again when it's back.
@@ -67,7 +67,7 @@ void sp_screen_status(UIViewController *screen, NSString *text);  // spstyle.swi
 // LSApplicationQueriesSchemes is needed to tell that LocalDevVPN isn't installed.
 static void turn_on(UIViewController *screen) {
     sp_screen_status(screen, @"Opening LocalDevVPN…");
-    NSURL *url = [NSURL URLWithString:@"localdevvpn://enable?scheme=slashplayed"];
+    NSURL *url = [NSURL URLWithString:@"localdevvpn://enable?scheme=slashplayedplus"];
     [UIApplication.sharedApplication openURL:url options:@{} completionHandler:^(BOOL ok) {
         say(ok ? @"opened LocalDevVPN to turn it on" : @"couldn't open LocalDevVPN");
         sp_screen_status(screen, ok ? @"Waiting for LocalDevVPN…"

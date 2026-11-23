@@ -21,10 +21,12 @@
 	     local network access. Only visionOS browses: an iPad or iPhone gets its pairing from the Mac. -->
 	<key>NSBonjourServices</key><array><string>_remotepairing-manual-pairing._tcp</string></array>
 	<key>NSLocalNetworkUsageDescription</key><string>Slashplayed finds Remote Devices in Settings to pair with this Vision Pro, so it can prepare the game without a Mac.</string>
-	<!-- LocalDevVPN's localdevvpn://enable?scheme=slashplayed turns it on and opens this, back to the app (spvpn.m). -->
+	<!-- LocalDevVPN's localdevvpn://enable?scheme=slashplayedplus turns it on and opens this, back to the app
+	     (spvpn.m). Not upstream's slashplayed scheme: with both apps on one device, iOS gives a shared scheme
+	     to one of them, so LocalDevVPN would bring back the wrong app. -->
 	<key>CFBundleURLTypes</key><array><dict>
-		<key>CFBundleURLName</key><string>slashplayed</string>
-		<key>CFBundleURLSchemes</key><array><string>slashplayed</string></array>
+		<key>CFBundleURLName</key><string>slashplayedplus</string>
+		<key>CFBundleURLSchemes</key><array><string>slashplayedplus</string></array>
 	</dict></array>
 	<!-- No UIUserInterfaceStyle: each launcher screen pins Dark itself (spstart.m, spsettings.swift,
 	     spsignin.swift), so nothing app-wide decides it. -->

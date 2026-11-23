@@ -142,8 +142,8 @@ the scene first (see [iPad](#ipad)), and if the helper can't do its part, the la
 on the scene and doesn't load the client: no pairing record, no image to mount. LocalDevVPN off isn't
 one of those: before pairing and each status request, the launcher tries a TCP connect to
 `10.7.0.1:49152`, and when that fails it shows a screen and waits (`spvpn.m`). The screen opens
-`localdevvpn://enable?scheme=slashplayed`, once by itself and again from its button: LocalDevVPN turns
-its VPN on and opens `slashplayed://` (the app's one URL type), back to the app. The connect, tried
+`localdevvpn://enable?scheme=slashplayedplus`, once by itself and again from its button: LocalDevVPN turns
+its VPN on and opens `slashplayedplus://` (the app's one URL type), back to the app. The connect, tried
 every second off the main thread, is what ends the wait, so turning it on by hand works too. Opening the
 app again would only bring the waiting one back, which is why it doesn't fail and ask for that. An app
 that a debugger already holds (StikDebug launched it) skips the helper. When the device no longer
